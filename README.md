@@ -16,7 +16,7 @@ Ensure require is present in composer.json. This will install the plugin into Pl
 ```json
 {
   "require": {
-    "nanapi/cakephp-aws-datasource": "dev-master"
+    "nanapi/cakephp-aws-datasource": "v1.0.0"
   }
 }
 ```
