@@ -60,9 +60,9 @@ class AwsSource extends DataSource implements ServiceBuilderInterface {
   }
 
   public function get($name, $throwAway = false) {
-    return $this->connection->get($name, $throwAway);
+    return $this->_connection->get($name, $throwAway);
   }
   public function set($key, $service) {
-    return $this->connection->set($key, $service);
+    return $this->_connection->set($key, $service);
   }
 }
