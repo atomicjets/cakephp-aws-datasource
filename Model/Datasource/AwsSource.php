@@ -10,20 +10,9 @@ class AwsSource extends DataSource implements ServiceBuilderInterface {
 
   public function __construct($config = null, $autoConnect = true) {
     parent::__construct($config);
-    if (!$this->enabled()) {
-      throw new MissingConnectionException(array(
-        'class' => get_class($this),
-        'message' => __d('cake_dev', 'Selected driver is not enabled'),
-        'enabled' => false
-      ));
-    }
     if ($autoConnect) {
       return $this->connect();
     }
-  }
-
-  public function enabled() {
-    return extension_loaded('redis');
   }
 
   public function connect() {
