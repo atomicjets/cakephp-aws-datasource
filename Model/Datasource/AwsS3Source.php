@@ -2,6 +2,7 @@
 App::uses('AwsSource', 'AwsDatasource.Model/Datasource');
 
 use Aws\Common\Aws;
+use Aws\S3\S3Client;
 
 class AwsS3Source extends AwsSource {
 
@@ -14,5 +15,8 @@ class AwsS3Source extends AwsSource {
     return $this->config['bucket'];
   }
 
+  public function getS3Client() {
+    return S3Client::factory($this->config);
+  }
 }
 

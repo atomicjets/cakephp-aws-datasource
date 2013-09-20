@@ -64,4 +64,12 @@ class AwsS3Model extends AwsModel {
     }
     return call_user_func_array(array($this->get('s3'), $method), $args);
   }
+
+  public function S3Client() {
+    return $this->getDataSource()->getS3Client();
+  }
+
+  public function getObjectUrl($key) {
+    return $this->S3Client()->getObjectUrl($this->getDataSource()->getBucket(), $key);
+  }
 }
