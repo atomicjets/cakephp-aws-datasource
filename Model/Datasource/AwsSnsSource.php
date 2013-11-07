@@ -2,7 +2,7 @@
 App::uses('AwsSource', 'AwsDatasource.Model/Datasource');
 
 use Aws\Common\Aws;
-use Aws\Sns\AnsClient;
+use Aws\Sns\SnsClient;
 
 class AwsSnsSource extends AwsSource {
 
