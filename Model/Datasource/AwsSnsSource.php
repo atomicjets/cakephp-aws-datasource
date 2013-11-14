@@ -20,4 +20,3 @@ class AwsSnsSource extends AwsSource {
     return $this->_connection;
   }
 }
-
