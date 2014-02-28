@@ -15,5 +15,9 @@ class AwsSnsModel extends AwsModel {
   public function getPlatformApplicationArn() {
     return $this->getDataSource()->getConfig('platform_application_arn');
   }
+
+  public function getType() {
+    return $this->getDataSource()->getConfig('type');
+  }
 }
 
