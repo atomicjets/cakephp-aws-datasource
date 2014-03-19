@@ -15,8 +15,4 @@ class AwsSnsSource extends AwsSource {
     $this->_connection = SnsClient::factory($this->config);
     $this->connected = true;
   }
-
-  public function getSnsClient() {
-    return $this->_connection;
-  }
 }

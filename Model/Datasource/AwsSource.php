@@ -59,4 +59,8 @@ class AwsSource extends DataSource implements ServiceBuilderInterface {
   public function getConfig($hash) {
     return Hash::get($this->config, $hash);
   }
+
+  public function getConnection() {
+    return $this->_connection;
+  }
 }
