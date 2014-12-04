@@ -20,9 +20,14 @@ class AwsDynamoDbModel extends AwsModel {
       case 'updatetable';
       case 'waituntiltableexists':
       case 'waituntiltablenotexists';
-        $args[0] += array(
+        $table_name = array(
           'TableName' => $this->getDataSource()->getTable(),
         );
+        if (isset($args[0])) {
+          $args[0] += $table_name;
+        } else {
+          $args[0] = $table_name;
+        }
       break;
     }
     $args[0] += array(
@@ -43,4 +48,3 @@ class AwsDynamoDbModel extends AwsModel {
     return $this->getDataSource()->getTable();
   }
 }
-
