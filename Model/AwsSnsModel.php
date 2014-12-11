@@ -34,4 +34,8 @@ class AwsSnsModel extends AwsModel {
   public function getType() {
     return $this->getDataSource()->getConfig('type');
   }
+
+  public function getTopicPrefix() {
+    return $this->getDataSource()->getConfig('topic_prefix');
+  }
 }
