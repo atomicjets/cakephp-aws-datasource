@@ -3,7 +3,6 @@ App::uses('AwsModel', 'AwsDatasource.Model');
 
 class AwsDynamoDbModel extends AwsModel {
   public $useDbConfig = 'aws_dynamodb';
-  public $returnConsumedCapacity = 'NONE';
 
   public function __call($method, $args) {
     switch (strtolower($method)) {
@@ -30,9 +29,6 @@ class AwsDynamoDbModel extends AwsModel {
         }
       break;
     }
-    $args[0] += array(
-      'ReturnConsumedCapacity' => $this->returnConsumedCapacity,
-    );
     return call_user_func_array(array($this->getClient(), $method), $args);
   }
 
